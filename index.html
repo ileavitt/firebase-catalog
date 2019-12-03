@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Sneaker/Clothing Catalog</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Custom styles for this template -->
+	<link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<h1 class="pull-left">Sneaker/Clothing Catalog</h1>
+                <!-- <img src="images/nb.png" class="pull-right" /> -->
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="panel-group">
+			<div class="panel panel-danger">
+				<div class="panel-heading">Items</div>
+				<div class="panel-body">
+					<form id="sneaker-form">
+						<div class="form-group">
+							<label for="brand">Brand</label>
+							<input id="brand" name="brand" type="text" class="form-control"></input>
+						</div> 
+						<div class="form-group">
+							<label for="model">Model</label>
+							<input id="model" name="model" type="text" class="form-control"></input>
+						</div>
+						<div class="form-group">
+							<label for="releaseYear">Release Year</label>
+							<input id="release-year" name="releaseYear" type="text" class="form-control"></input>
+						</div>
+						<div class="form-group">
+							<label for="purchaseDate">Purchase Year</label>
+							<input id="purchase-date" name="purchaseDate" type="text" class="form-control"></input>
+						</div>
+						<div class="form-group">
+							<label for="sellDate">Sale Year</label>
+							<input id="sell-date" name="sellDate" type="text" class="form-control"></input>
+                        </div>
+                        <div class="form-group">
+							<label for="purchasePrice">Purchase Price</label>
+							<input id="purchase-price" name="purchasePrice" type="text" class="form-control"></input>
+                        </div>
+                        <div class="form-group">
+							<label for="salePrice">Sale Price</label>
+							<input id="sale-price" name="salePrice" type="text" class="form-control"></input>
+						</div>
+						<div class="form-group">
+							<label for="thumbnail">Image</label>
+							<input id="thumbnail" name="thumbnail" type="file" onchange="previewFile()"><br>
+							<img src="" id="thumbnail-preview" height="100" alt="Image preview...">
+						</div>
+						<hr/>
+						<button id="post-catalog" class="btn btn-default">Post to catalog</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel-group">
+			<div class="panel panel-success">
+				<div class="panel-heading">Catalog</div>
+				<div class="panel-body">
+					<table id="items-table" class="table table-striped tablesorter">
+						<thead>
+							<tr>
+								<th>Brand</th>
+								<th>Model</th>
+								<th>Release Year</th>
+								<th>Purchase Date</th>
+								<th>Sell Date</th>
+								<th>Thumbnail</th>
+								<th class="text-center">Remove</th>
+							</tr>
+						</thead>
+						<tbody id="sneaker-collection"></tbody>
+					</table> 
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/jquery.tablesorter.min.js"></script>
+	<script src="js/index.js"></script>
+</html>
